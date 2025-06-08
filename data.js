@@ -1,4 +1,185 @@
-export const courseIndustries = { "African Languages": ["Translation", "Cultural Heritage", "Linguistics"], "English": ["Literary Studies", "Creative Writing", "Publishing"], "Afrikaans": ["Translation", "Language Studies", "Education"], "History": ["Museums", "Heritage", "Research"], "Philosophy": ["Ethics", "Academia", "Research"], "Psychology": ["Clinical Psychology", "Counselling", "Research"], "Social Work": ["Community Development", "Child Protection", "Therapeutic Services"], "Sociology": ["Urban Sociology", "Social Research", "Criminology"], "Communication Studies": ["Public Relations", "Media", "Corporate Communication"], "Journalism": ["Newsrooms", "Publishing", "Broadcasting"], "Religion Studies": ["Academia", "Religious Organizations", "Counselling"], "Fine Arts": ["Art Galleries", "Museum Curation", "Creative Industries"], "Music": ["Music Production", "Performance", "Music Therapy"], "Natural Sciences": ["Laboratory Research", "Environmental Consultancy", "Biotechnology"], "Physics": ["Astrophysics", "Quantum Physics", "Engineering"], "Chemistry": ["Chemical Engineering", "Pharmaceuticals", "Environmental Science"], "Biology": ["Ecology", "Research", "Conservation"], "Mathematics": ["Finance", "Data Science", "Teaching"], "Statistics": ["Data Analytics", "Market Research", "Government Statistics"], "Environmental Studies": ["Sustainability", "Climate Change", "Policy Advocacy"], "Earth Sciences": ["Geology", "Geophysics", "Environmental Consultancy"], "Biomedical Sciences": ["Healthcare", "Research", "Pharmaceuticals"], "Biokinetics": ["Sports Science", "Rehabilitation", "Healthcare"], "Health Systems Sciences": ["Healthcare Administration", "Policy", "Consulting"], "Civil Engineering": ["Construction", "Infrastructure", "Urban Planning"], "Electrical Engineering": ["Power Systems", "Electronics", "Automation"], "Mechanical Engineering": ["Automotive", "Manufacturing", "Aerospace"], "Chemical Engineering": ["Petrochemicals", "Pharmaceuticals", "Energy"], "Industrial Engineering": ["Manufacturing", "Operations Research", "Logistics"], "Mining Engineering": ["Mining Operations", "Environmental Impact", "Safety Management"], "Computer Science": ["Software Development", "Cybersecurity", "Data Science"], "Information Technology": ["IT Services", "Software Solutions", "Network Administration"], "Accounting Sciences": ["Finance", "Audit", "Taxation"], "Actuarial Science": ["Insurance", "Risk Management", "Investment"], "Business Administration": ["Management", "Operations", "Human Resources"], "Marketing": ["Brand Management", "Market Research", "Digital Marketing"], "Finance": ["Corporate Finance", "Banking", "Investment Management"], "Human Resource Management": ["Talent Management", "Recruitment", "Training and Development"], "Entrepreneurship": ["Startups", "Business Development", "Consulting"], "Supply Chain Management": ["Logistics", "Procurement", "Operations Management"], "Operations Management": ["Manufacturing", "Process Optimization", "Business Consulting"], "Law": ["Corporate Law", "Criminal Law", "International Law"], "Medicine": ["General Practice", "Surgery", "Emergency Care"], "Dentistry": ["Orthodontics", "General Dentistry", "Oral Surgery"], "Nursing": ["Community Health", "Critical Care", "Pediatrics"], "Pharmacy": ["Pharmaceutical Sciences", "Clinical Pharmacy", "Pharmacology"], "Physiotherapy": ["Sports Rehabilitation", "Orthopedic Care", "Physical Therapy"], "Occupational Therapy": ["Therapeutic Services", "Rehabilitation", "Mental Health"], "Education": ["Primary Education", "Secondary Education", "Special Needs Education", "Tertiary Education"], "Agriculture and Forestry": ["Farming", "Agribusiness", "Environmental Conservation"], "Political Science": ["Public Policy", "International Relations", "Political Consulting"], "Economics": ["Macroeconomics", "Microeconomics", "Economic Research"], "Anthropology": ["Cultural Anthropology", "Archaeology", "Social Research"], "Geography": ["Urban Planning", "Environmental Studies", "Cartography"], "Public Administration": ["Government", "Public Policy", "Local Government"], "International Relations": ["Diplomacy", "Human Rights", "Global Studies"], "Legal Secretary": ["Law Firms", "Courts", "Legal Services"], "Medical Secretary": ["Hospitals", "Clinics", "Healthcare Administration"], "Management Assistant": ["Corporate Offices", "Project Management", "Operations"], "Public Procurement Management": ["Government Agencies", "Public Sector", "Procurement"], "Quantitative Management": ["Data Analytics", "Finance", "Market Research"], "Digital Marketing": ["Social Media", "Advertising", "SEO/SEM"], "Corporate Communication": ["Public Relations", "Media", "Internal Communication"], "Real Estate": ["Property Development", "Real Estate Investment", "Sales"], "Strategy": ["Business Strategy", "Consulting", "Market Research"], "Agribusiness": ["Farming", "Agriculture Management", "Agricultural Consultancy"], "Customer Relations": ["Customer Service", "Sales", "Account Management"], "Digital Business": ["E-commerce", "Online Marketing", "Business Technology"], "General Management": ["Operations Management", "Corporate Management", "Leadership"], "Management Control": ["Corporate Strategy", "Risk Management", "Consulting"], "Public Relations": ["Corporate Communications", "Media Relations", "Brand Management"], "Sales": ["Sales Management", "Retail", "Business Development"], "Healthcare Studies": ["Healthcare Administration", "Policy", "Clinical Studies"], "Nutritional Science": ["Nutritionist", "Health Consultant", "Research"], "Information Systems": ["Software Development", "IT Services", "Data Analysis"], "Regional Planning": ["Urban Planning", "Land Development", "Sustainability"], "Urban Planning": ["City Planning", "Architecture", "Government Agencies"], "Theology": ["Religious Studies", "Counselling", "Ministry"], "Business Law Studies": ["Corporate Law", "Contract Law", "International Business Law"], "Human Settlements Management": ["Housing Development", "Urban Development", "Public Administration"] };
+const internshipData = {
+  "African Languages": {
+    "Gauteng": {
+      "Pretoria": [
+        {
+          "industry": "Translation Services",
+          "link": "https://maps.google.com/?q=Translation+services+in+Pretoria"
+        },
+        {
+          "industry": "Cultural Heritage Institutions",
+          "link": "https://maps.google.com/?q=Cultural+heritage+institutions+in+Pretoria"
+        }
+      ]
+    },
+    "Eastern Cape": {
+      "Mthatha": [
+        {
+          "industry": "Linguistic Research Centers",
+          "link": "https://maps.google.com/?q=Linguistic+research+centers+in+Mthatha"
+        }
+      ]
+    }
+  },
 
-export const provinceTowns = { "Gauteng": ["Johannesburg","Pretoria","Soweto","Benoni","Boksburg","Vereeniging","Krugersdorp","Centurion","Midrand"], "Western Cape": ["Cape Town","Stellenbosch","Paarl","George","Knysna","Mossel Bay","Worcester"], "KwaZulu-Natal": ["Durban","Pietermaritzburg","Richards Bay","Newcastle","Ulundi","Port Shepstone"], "Eastern Cape": ["Port Elizabeth","East London","Mthatha","Queenstown","Grahamstown","Aliwal North"], "Free State": ["Bloemfontein","Welkom","Sasolburg","Bethlehem","Parys"], "Limpopo": ["Polokwane","Thohoyandou","Tzaneen","Musina","Lephalale","Mokopane"], "Mpumalanga": ["Nelspruit","Witbank","Secunda","Barberton","Standerton"], "North West": ["Mahikeng","Klerksdorp","Rustenburg","Brits","Potchefstroom"], "Northern Cape": ["Kimberley","Upington","Springbok","De Aar","Kuruman"] };
+  "Computer Science": {
+    "Gauteng": {
+      "Johannesburg": [
+        {
+          "industry": "Software Development Companies",
+          "link": "https://maps.google.com/?q=Software+development+companies+in+Johannesburg"
+        },
+        {
+          "industry": "Cybersecurity Firms",
+          "link": "https://maps.google.com/?q=Cybersecurity+firms+in+Johannesburg"
+        }
+      ]
+    },
+    "Western Cape": {
+      "Cape Town": [
+        {
+          "industry": "Tech Startups",
+          "link": "https://maps.google.com/?q=Tech+startups+in+Cape+Town"
+        }
+      ]
+    }
+  },
 
+  "Business Management": {
+    "KwaZulu-Natal": {
+      "Durban": [
+        {
+          "industry": "Retail Companies",
+          "link": "https://maps.google.com/?q=Retail+companies+in+Durban"
+        },
+        {
+          "industry": "Corporate Offices",
+          "link": "https://maps.google.com/?q=Corporate+offices+in+Durban"
+        }
+      ]
+    },
+    "Gauteng": {
+      "Midrand": [
+        {
+          "industry": "Business Parks",
+          "link": "https://maps.google.com/?q=Business+parks+in+Midrand"
+        }
+      ]
+    }
+  },
+
+  "Medical Secretary": {
+    "Western Cape": {
+      "Stellenbosch": [
+        {
+          "industry": "Clinics",
+          "link": "https://maps.google.com/?q=Clinics+in+Stellenbosch"
+        },
+        {
+          "industry": "Hospital Admin Offices",
+          "link": "https://maps.google.com/?q=Hospital+administration+offices+in+Stellenbosch"
+        }
+      ]
+    },
+    "Gauteng": {
+      "Centurion": [
+        {
+          "industry": "Medical Practices",
+          "link": "https://maps.google.com/?q=Medical+practices+in+Centurion"
+        }
+      ]
+    }
+  },
+
+  "Digital Marketing": {
+    "Gauteng": {
+      "Johannesburg": [
+        {
+          "industry": "Social Media Agencies",
+          "link": "https://maps.google.com/?q=Social+media+agencies+in+Johannesburg"
+        },
+        {
+          "industry": "SEO Companies",
+          "link": "https://maps.google.com/?q=SEO+companies+in+Johannesburg"
+        }
+      ]
+    },
+    "KwaZulu-Natal": {
+      "Durban": [
+        {
+          "industry": "Digital Advertising Firms",
+          "link": "https://maps.google.com/?q=Digital+advertising+firms+in+Durban"
+        }
+      ]
+    }
+  },
+
+  "Political Science": {
+    "Gauteng": {
+      "Pretoria": [
+        {
+          "industry": "Public Policy Institutes",
+          "link": "https://maps.google.com/?q=Public+Policy+Institutes+in+Pretoria"
+        },
+        {
+          "industry": "Government Departments",
+          "link": "https://maps.google.com/?q=Government+departments+in+Pretoria"
+        }
+      ]
+    },
+    "Western Cape": {
+      "Cape Town": [
+        {
+          "industry": "Parliamentary Offices",
+          "link": "https://maps.google.com/?q=Parliamentary+offices+in+Cape+Town"
+        }
+      ]
+    }
+  },
+
+  "Theology": {
+    "Eastern Cape": {
+      "Grahamstown": [
+        {
+          "industry": "Theological Seminaries",
+          "link": "https://maps.google.com/?q=Theological+seminaries+in+Grahamstown"
+        },
+        {
+          "industry": "Religious Organizations",
+          "link": "https://maps.google.com/?q=Religious+organizations+in+Grahamstown"
+        }
+      ]
+    },
+    "KwaZulu-Natal": {
+      "Pietermaritzburg": [
+        {
+          "industry": "Church Institutions",
+          "link": "https://maps.google.com/?q=Church+institutions+in+Pietermaritzburg"
+        }
+      ]
+    }
+  },
+
+  "Urban Planning": {
+    "Gauteng": {
+      "Johannesburg": [
+        {
+          "industry": "Municipal Planning Offices",
+          "link": "https://maps.google.com/?q=Municipal+planning+offices+in+Johannesburg"
+        },
+        {
+          "industry": "Architecture Firms",
+          "link": "https://maps.google.com/?q=Architecture+firms+in+Johannesburg"
+        }
+      ]
+    },
+    "Western Cape": {
+      "Cape Town": [
+        {
+          "industry": "City Development Agencies",
+          "link": "https://maps.google.com/?q=City+development+agencies+in+Cape+Town"
+        }
+      ]
+    }
+  }
+}
