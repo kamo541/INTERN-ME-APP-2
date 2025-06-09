@@ -96,13 +96,41 @@ Object.assign(courseIndustryMap, {
 });
 
 const provinceTowns = {
-  "Gauteng": ["Johannesburg", "Pretoria", "Soweto", "Benoni", "Boksburg", "Krugersdorp", "Vereeniging"],
-  "Western Cape": ["Cape Town", "Stellenbosch", "Paarl", "George", "Mossel Bay", "Worcester", "Beaufort West"],
-  "KwaZulu-Natal": ["Durban", "Pietermaritzburg", "Richards Bay", "Newcastle", "Port Shepstone", "Ladysmith", "Ulundi"],
-  "Eastern Cape": ["Gqeberha (Port Elizabeth)", "East London", "Mthatha", "Queenstown", "Uitenhage", "Bhisho", "Aliwal North"],
-  "Free State": ["Bloemfontein", "Welkom", "Bethlehem", "Sasolburg", "Kroonstad", "Harrismith", "Phuthaditjhaba"],
-  "Limpopo": ["Polokwane", "Thohoyandou", "Tzaneen", "Lebowakgomo", "Mokopane", "Musina", "Giyani"],
-  "Mpumalanga": ["Mbombela (Nelspruit)", "Witbank (eMalahleni)", "Secunda", "Middelburg", "Lydenburg", "Ermelo", "Sabie"],
-  "North West": ["Mahikeng", "Klerksdorp", "Rustenburg", "Potchefstroom", "Brits", "Zeerust", "Vryburg"],
-  "Northern Cape": ["Kimberley", "Upington", "Springbok", "De Aar", "Kathu", "Kuruman", "Colesberg"]
-};
+  Gauteng": [
+        "Johannesburg", "Pretoria", "Soweto", "Benoni", "Boksburg", "Krugersdorp", "Vereeniging",
+        "Alberton", "Roodepoort", "Centurion", "Randburg", "Midrand", "Tembisa", "Germiston", "Springs", "Brakpan"
+    ],
+    "Western Cape": [
+        "Cape Town", "Stellenbosch", "Paarl", "George", "Mossel Bay", "Worcester", "Beaufort West",
+        "Knysna", "Oudtshoorn", "Malmesbury", "Vredenburg", "Ceres", "Caledon", "Robertson", "Langebaan"
+    ],
+    "KwaZulu-Natal": [
+        "Durban", "Pietermaritzburg", "Richards Bay", "Newcastle", "Port Shepstone", "Ladysmith", "Ulundi",
+        "Empangeni", "Howick", "Eshowe", "Mtubatuba", "Margate", "KwaDukuza (Stanger)", "Vryheid", "Estcourt"
+    ],
+    "Eastern Cape": [
+        "Gqeberha (Port Elizabeth)", "East London", "Mthatha", "Queenstown", "Uitenhage", "Bhisho", "Aliwal North",
+        "Butterworth", "Grahamstown (Makhanda)", "King William's Town", "Jeffreys Bay", "Komani", "Cradock",
+        "Graaff-Reinet", "Mount Frere"
+    ],
+    "Free State": [
+        "Bloemfontein", "Welkom", "Bethlehem", "Sasolburg", "Kroonstad", "Harrismith", "Phuthaditjhaba",
+        "Parys", "Virginia", "Ficksburg", "Senekal", "Thaba Nchu", "Heilbron", "Ladybrand", "Bothaville"
+    ],
+    "Limpopo": [
+        "Polokwane", "Thohoyandou", "Tzaneen", "Lebowakgomo", "Mokopane", "Musina", "Giyani",
+        "Phalaborwa", "Modimolle", "Makhado", "Bela-Bela", "Jane Furse", "Groblersdal", "Marble Hall", "Burgersfort"
+    ],
+    "Mpumalanga": [
+        "Mbombela (Nelspruit)", "Witbank (eMalahleni)", "Secunda", "Middelburg", "Lydenburg", "Ermelo", "Sabie",
+        "Delmas", "White River", "Barberton", "Komatipoort", "Standerton", "Bethal", "Hazyview", "Carolina"
+    ],
+    "North West": [
+        "Mahikeng", "Klerksdorp", "Rustenburg", "Potchefstroom", "Brits", "Zeerust", "Vryburg",
+        "Lichtenburg", "Orkney", "Mmabatho", "Taung", "Schweizer-Reneke", "Mogwase", "Delareyville", "Stilfontein"
+    ],
+    "Northern Cape": [
+        "Kimberley", "Upington", "Springbok", "De Aar", "Kathu", "Kuruman", "Colesberg",
+        "Douglas", "Postmasburg", "Calvinia", "Keimoes", "Kakamas", "Victoria West", "Hartswater", "Warrenton"
+    ]
+}
