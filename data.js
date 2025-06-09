@@ -96,13 +96,13 @@ Object.assign(courseIndustryMap, {
 });
 
 const provinceTowns = {
-  "Gauteng": ["Johannesburg", "Pretoria", "Soweto"],
-  "Western Cape": ["Cape Town", "Stellenbosch", "Paarl"],
-  "KwaZulu-Natal": ["Durban", "Pietermaritzburg", "Richards Bay"],
-  "Eastern Cape": ["Port Elizabeth", "East London", "Mthatha"],
-  "Free State": ["Bloemfontein", "Welkom", "Bethlehem"],
-  "Limpopo": ["Polokwane", "Thohoyandou", "Tzaneen"],
-  "Mpumalanga": ["Nelspruit", "Witbank", "Secunda"],
-  "North West": ["Mahikeng", "Klerksdorp", "Rustenburg"],
-  "Northern Cape": ["Kimberley", "Upington", "Springbok"]
+  "Gauteng": ["Johannesburg", "Pretoria", "Soweto", "Benoni", "Boksburg", "Krugersdorp", "Vereeniging"],
+  "Western Cape": ["Cape Town", "Stellenbosch", "Paarl", "George", "Mossel Bay", "Worcester", "Beaufort West"],
+  "KwaZulu-Natal": ["Durban", "Pietermaritzburg", "Richards Bay", "Newcastle", "Port Shepstone", "Ladysmith", "Ulundi"],
+  "Eastern Cape": ["Gqeberha (Port Elizabeth)", "East London", "Mthatha", "Queenstown", "Uitenhage", "Bhisho", "Aliwal North"],
+  "Free State": ["Bloemfontein", "Welkom", "Bethlehem", "Sasolburg", "Kroonstad", "Harrismith", "Phuthaditjhaba"],
+  "Limpopo": ["Polokwane", "Thohoyandou", "Tzaneen", "Lebowakgomo", "Mokopane", "Musina", "Giyani"],
+  "Mpumalanga": ["Mbombela (Nelspruit)", "Witbank (eMalahleni)", "Secunda", "Middelburg", "Lydenburg", "Ermelo", "Sabie"],
+  "North West": ["Mahikeng", "Klerksdorp", "Rustenburg", "Potchefstroom", "Brits", "Zeerust", "Vryburg"],
+  "Northern Cape": ["Kimberley", "Upington", "Springbok", "De Aar", "Kathu", "Kuruman", "Colesberg"]
 };
