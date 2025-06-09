@@ -15,7 +15,7 @@
       margin-bottom: 20px;
     }
 
-    select {
+    select, input[type="text"] {
       width: 100%;
       padding: 10px;
       margin-bottom: 15px;
@@ -28,6 +28,7 @@
 
     button {
       padding: 10px 15px;
+      margin: 10px 5px 0 0;
       background-color: #007BFF;
       color: white;
       font-size: 16px;
@@ -40,12 +41,23 @@
       background-color: #0056b3;
     }
 
+    .navigation {
+      margin-top: 10px;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-weight: bold;
+    }
   </style>
-  <script src="data.js"></script> <!-- Make sure this is the correct path -->
+  <script src="data.js"></script>
 </head>
 <body>
 
-  <h1>Select Your Course, Province & Town</h1>
+  <h1>Internship Location Finder</h1>
+
+  <!-- Course Search -->
+  <input type="text" id="courseSearch" placeholder="Search for a course...">
 
   <!-- Course selection -->
   <select id="courseSelect">
@@ -62,69 +74,104 @@
     <option value="">Select a Town</option>
   </select>
 
-  <!-- Output result -->
-  <div id="result" style="margin-top:20px; font-weight: bold;"></div>
+  <!-- Navigation buttons -->
+  <div class="navigation">
+    <button id="backBtn" class="hidden">Back</button>
+    <button id="nextBtn">Next</button>
+  </div>
+
+  <!-- Result output -->
+  <div id="result"></div>
 
   <script>
-    // Fill course options
     const courseSelect = document.getElementById("courseSelect");
     const provinceSelect = document.getElementById("provinceSelect");
     const townSelect = document.getElementById("townSelect");
     const result = document.getElementById("result");
+    const courseSearch = document.getElementById("courseSearch");
 
-    Object.keys(courseIndustryMap).forEach(course => {
-      const option = document.createElement("option");
-      option.value = course;
-      option.textContent = course;
-      courseSelect.appendChild(option);
-    });
+    const nextBtn = document.getElementById("nextBtn");
+    const backBtn = document.getElementById("backBtn");
 
-    courseSelect.addEventListener("change", () => {
-      const selectedCourse = courseSelect.value;
-      if (!selectedCourse) return;
+    let step = 1; // Step 1: course, 2: province, 3: town
 
-      // Show province dropdown
-      provinceSelect.innerHTML = '<option value="">Select a Province</option>';
-      Object.keys(provinceTowns).forEach(province => {
-        const option = document.createElement("option");
-        option.value = province;
-        option.textContent = province;
-        provinceSelect.appendChild(option);
+    // Load courses into dropdown
+    function populateCourseOptions(filter = "") {
+      courseSelect.innerHTML = '<option value="">Select a Course</option>';
+      Object.keys(courseIndustryMap).forEach(course => {
+        if (course.toLowerCase().includes(filter.toLowerCase())) {
+          const option = document.createElement("option");
+          option.value = course;
+          option.textContent = course;
+          courseSelect.appendChild(option);
+        }
       });
-      provinceSelect.classList.remove("hidden");
-      townSelect.classList.add("hidden");
-      result.textContent = "";
+    }
+
+    courseSearch.addEventListener("input", () => {
+      populateCourseOptions(courseSearch.value);
     });
 
-    provinceSelect.addEventListener("change", () => {
-      const selectedProvince = provinceSelect.value;
-      const towns = provinceTowns[selectedProvince] || [];
+    populateCourseOptions();
 
-      // Show towns
-      townSelect.innerHTML = '<option value="">Select a Town</option>';
-      towns.forEach(town => {
-        const option = document.createElement("option");
-        option.value = town;
-        option.textContent = town;
-        townSelect.appendChild(option);
-      });
-      townSelect.classList.remove("hidden");
-      result.textContent = "";
-    });
-
-    townSelect.addEventListener("change", () => {
-      const selectedCourse = courseSelect.value;
-      const selectedTown = townSelect.value;
-      const selectedProvince = provinceSelect.value;
-
-      if (selectedCourse && selectedTown && selectedProvince) {
+    nextBtn.addEventListener("click", () => {
+      if (step === 1) {
+        const selectedCourse = courseSelect.value;
+        if (!selectedCourse) return alert("Please select a course.");
+        provinceSelect.innerHTML = '<option value="">Select a Province</option>';
+        Object.keys(provinceTowns).forEach(province => {
+          const option = document.createElement("option");
+          option.value = province;
+          option.textContent = province;
+          provinceSelect.appendChild(option);
+        });
+        courseSelect.classList.add("hidden");
+        courseSearch.classList.add("hidden");
+        provinceSelect.classList.remove("hidden");
+        backBtn.classList.remove("hidden");
+        step = 2;
+      } else if (step === 2) {
+        const selectedProvince = provinceSelect.value;
+        if (!selectedProvince) return alert("Please select a province.");
+        const towns = provinceTowns[selectedProvince] || [];
+        townSelect.innerHTML = '<option value="">Select a Town</option>';
+        towns.forEach(town => {
+          const option = document.createElement("option");
+          option.value = town;
+          option.textContent = town;
+          townSelect.appendChild(option);
+        });
+        provinceSelect.classList.add("hidden");
+        townSelect.classList.remove("hidden");
+        step = 3;
+        nextBtn.textContent = "Show Results";
+      } else if (step === 3) {
+        const selectedCourse = courseSelect.value;
+        const selectedProvince = provinceSelect.value;
+        const selectedTown = townSelect.value;
+        if (!selectedTown) return alert("Please select a town.");
         const industries = courseIndustryMap[selectedCourse] || [];
-
         const mapLinks = industries.map(industry =>
           `<a href="https://www.google.com/maps/search/${encodeURIComponent(industry + ' in ' + selectedTown + ', ' + selectedProvince)}" target="_blank">${industry}</a>`
         );
-
         result.innerHTML = `Internship Locations in <strong>${selectedTown}, ${selectedProvince}</strong> for <strong>${selectedCourse}</strong>:<br>${mapLinks.join("<br>")}`;
+        nextBtn.classList.add("hidden");
+      }
+    });
+
+    backBtn.addEventListener("click", () => {
+      if (step === 2) {
+        provinceSelect.classList.add("hidden");
+        courseSelect.classList.remove("hidden");
+        courseSearch.classList.remove("hidden");
+        backBtn.classList.add("hidden");
+        step = 1;
+      } else if (step === 3) {
+        townSelect.classList.add("hidden");
+        provinceSelect.classList.remove("hidden");
+        result.innerHTML = "";
+        nextBtn.textContent = "Next";
+        step = 2;
       }
     });
   </script>
