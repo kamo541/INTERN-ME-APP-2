@@ -94,6 +94,7 @@ Object.assign(courseIndustryMap, {
   "Business Law Studies": ["Corporate Law", "Contract Law", "International Business Law"],
   "Human Settlements Management": ["Housing Development", "Urban Development", "Public Administration"]
 });
+
 const provinceTowns = {
   "Gauteng": ["Johannesburg", "Pretoria", "Soweto"],
   "Western Cape": ["Cape Town", "Stellenbosch", "Paarl"],
