@@ -1,30 +1,70 @@
 <!DOCTYPE html>
 <html>
-<head><meta charset="utf-8"><title>Select Course</title></head>
-<body>
-  <h2>Select Your Course</h2>
-  <form onsubmit="saveCourse(event)">
-    <select id="course" required>
-      <option value="">Select a course</option>
-    </select><br><br>
-    <button type="submit">Next</button>
-  </form>
-  <button onclick="window.location.href='duration.html'">Back</button>
-
+<head>
+  <title>Select Course</title>
   <script src="data.js"></script>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    input { padding: 10px; width: 100%; margin-bottom: 20px; }
+    select, h2, h3, p { margin-bottom: 15px; }
+    .location-link { display: block; margin-left: 20px; }
+  </style>
+</head>
+<body>
+  <h1>Select a Course</h1>
+  <input type="text" id="search" placeholder="Search courses...">
+  <select id="courseSelect" onchange="displayLocations()">
+    <option value="">-- Choose a Course --</option>
+  </select>
+
+  <div id="results"></div>
+
   <script>
-    const courseSelect = document.getElementById("course");
-    Object.keys(courseSectors).forEach(course => {
-      const opt = document.createElement("option");
-      opt.value = course;
-      opt.innerText = course;
-      courseSelect.appendChild(opt);
+    const searchInput = document.getElementById("search");
+    const courseSelect = document.getElementById("courseSelect");
+    const resultsDiv = document.getElementById("results");
+
+    Object.keys(courseIndustryMap).forEach(course => {
+      const option = document.createElement("option");
+      option.value = course;
+      option.textContent = course;
+      courseSelect.appendChild(option);
     });
 
-    function saveCourse(e) {
-      e.preventDefault();
-      localStorage.setItem("course", courseSelect.value);
-      window.location.href = "select-province.html";
+    searchInput.addEventListener("input", () => {
+      const filter = searchInput.value.toLowerCase();
+      Array.from(courseSelect.options).forEach(opt => {
+        opt.style.display = opt.value.toLowerCase().includes(filter) || opt.value === "" ? "block" : "none";
+      });
+    });
+
+    function displayLocations() {
+      resultsDiv.innerHTML = "";
+      const selectedCourse = courseSelect.value;
+      if (!selectedCourse) return;
+
+      const industries = courseIndustryMap[selectedCourse];
+
+      Object.entries(provinceTowns).forEach(([province, towns]) => {
+        const provinceHeading = document.createElement("h2");
+        provinceHeading.textContent = province;
+        resultsDiv.appendChild(provinceHeading);
+
+        towns.forEach(town => {
+          const townHeading = document.createElement("h3");
+          townHeading.textContent = town;
+          resultsDiv.appendChild(townHeading);
+
+          industries.forEach(industry => {
+            const link = document.createElement("a");
+            link.href = `https://www.google.com/maps/search/${encodeURIComponent(industry + " in " + town + ", " + province + ", South Africa")}`;
+            link.target = "_blank";
+            link.textContent = `${industry}`;
+            link.className = "location-link";
+            resultsDiv.appendChild(link);
+          });
+        });
+      });
     }
   </script>
 </body>
