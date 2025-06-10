@@ -1,23 +1,29 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <title>InternMe App</title>
+
+  <!-- 🌐 PWA Manifest and Icons -->
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#000000">
-  <link rel="icon" href="icon-192.png">
-  <script>
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js');
-    }
-  </script>
+  <link rel="apple-touch-icon" href="icons/icon-192.png">
+  <link rel="icon" href="icons/icon-192.png">
 </head>
+
 <body>
   <h1>WELCOME TO INTERN ME APP</h1>
+
   <form onsubmit="saveLogin(event)">
-    <label>First Name:</label><br><input id="first_name" required><br><br>
-    <label>Surname:</label><br><input id="surname" required><br><br>
-    <label>Email:</label><br><input type="email" id="email" required><br><br>
+    <label>First Name:</label><br>
+    <input id="first_name" required><br><br>
+
+    <label>Surname:</label><br>
+    <input id="surname" required><br><br>
+
+    <label>Email:</label><br>
+    <input type="email" id="email" required><br><br>
+
     <button type="submit">Next</button>
   </form>
 
@@ -28,6 +34,15 @@
       localStorage.setItem("surname", document.getElementById("surname").value);
       localStorage.setItem("email", document.getElementById("email").value);
       window.location.href = "confirm.html";
+    }
+  </script>
+
+  <!-- ⚙️ Register Service Worker -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/service-worker.js')
+        .then(() => console.log('✅ Service Worker Registered'))
+        .catch(error => console.error('❌ Service Worker Registration Failed:', error));
     }
   </script>
 </body>
