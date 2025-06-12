@@ -1,14 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
+  <meta charset="utf-8" />
   <title>InternMe App</title>
-
-  <!-- 🌐 PWA Manifest and Icons -->
-  <link rel="manifest" href="manifest.json">
-  <meta name="theme-color" content="#000000">
-  <link rel="apple-touch-icon" href="icons/icon-192.png">
-  <link rel="icon" href="icons/icon-192.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="manifest.json" />
+  <link rel="apple-touch-icon" href="icons/icon-192.png" />
+  <link rel="icon" href="icons/icon-192.png" />
 </head>
 
 <body>
@@ -37,12 +36,12 @@
     }
   </script>
 
-  <!-- ⚙️ Register Service Worker -->
+  <!-- ✅ Service Worker Registration -->
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/service-worker.js')
+      navigator.serviceWorker.register('service-worker.js')
         .then(() => console.log('✅ Service Worker Registered'))
-        .catch(error => console.error('❌ Service Worker Registration Failed:', error));
+        .catch(err => console.error('❌ Service Worker registration failed:', err));
     }
   </script>
 </body>
