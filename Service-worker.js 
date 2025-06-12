@@ -1,4 +1,4 @@
-const cacheName = 'internme-app-v1';
+const cacheName = 'internme-app-v2';
 const staticAssets = [
   './',
   './index.html',
@@ -13,21 +13,17 @@ const staticAssets = [
   './icons/icon-512.png'
 ];
 
-// Install and cache
 self.addEventListener('install', async e => {
   const cache = await caches.open(cacheName);
   await cache.addAll(staticAssets);
   return self.skipWaiting();
 });
 
-// Activate and take control
 self.addEventListener('activate', e => {
   self.clients.claim();
 });
 
-// Serve cached files
 self.addEventListener('fetch', async e => {
-  const req = e.request;
-  const cached = await caches.match(req);
-  return cached || fetch(req);
+  const cached = await caches.match(e.request);
+  return cached || fetch(e.request);
 });
