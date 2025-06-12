@@ -1,7 +1,7 @@
 {
   "name": "Intern Me App",
   "short_name": "InternMe",
-  "start_url": "/",
+  "start_url": "/INTERN-ME-APP-2/index.html",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#000000",
@@ -19,4 +19,3 @@
     }
   ]
 }
-
